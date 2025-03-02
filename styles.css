@@ -75,12 +75,14 @@ img {
 
 body {
   background-color: var(--Background-white);
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
 }
 
 main {
   display: grid;
-  place-content: center;
-  height: min-content;
+  height: 80vh;
   gap: 2rem;
   padding: 4rem 2rem;
 }
@@ -125,7 +127,7 @@ main .card:nth-child(5) img {
   padding: 2.25rem;
   border-radius: 0.5rem;
   background-color: var(--White);
-  box-shadow: 2rem 2.5rem 3rem 10px hsla(219, 29%, 14%, 0.2);
+  box-shadow: 2rem 2.5rem 2rem 8px hsla(219, 29%, 14%, 0.2);
   max-width: 19.5rem;
 }
 .card h1, .card h2 {
@@ -155,6 +157,33 @@ main .card:nth-child(5) img {
 }
 .card .card-header h1 > span:last-child {
   font-size: 0.75rem;
+}
+
+@media screen and (min-width: 48rem) {
+  main {
+    grid-template-areas: "a a b e" "c d d e";
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    max-width: 63vw;
+  }
+  main .card:nth-child(1) {
+    grid-area: a;
+  }
+  main .card:nth-child(2) {
+    grid-area: b;
+  }
+  main .card:nth-child(3) {
+    grid-area: c;
+  }
+  main .card:nth-child(4) {
+    grid-area: d;
+  }
+  main .card:nth-child(5) {
+    grid-area: e;
+  }
+  .card {
+    max-width: none;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
